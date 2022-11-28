@@ -1,14 +1,9 @@
 # Laravel-Vue-InertiaJS-CRUD-Application
-## Medini
+## this application implement using Laravel,Vue,IntertiaJS
 ### Ruhuna
 
-This this my first crud
-1. apple
-2. mango
-
-this this new
-
-* crud
-* app
-
-[my website](https://www.google.com)
+application implemented to perform 
+1. Create
+2. View
+3. Edit
+4. Delete
