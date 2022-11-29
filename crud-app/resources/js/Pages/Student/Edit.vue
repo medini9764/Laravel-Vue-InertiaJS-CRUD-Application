@@ -56,7 +56,7 @@ function updateStudent(){
                         <div class="sm:col-span-6">
                             <label for="title" class="block text-sm font-medium text-gray-700">Image</label>
                             <div class="m-2 p-2">
-                                <img :src="student.image" class="w-32 h-32"/>
+                                <img :src="image" class="w-32 h-32"/>
                             </div>
                             <div class="mt-1">
                                 <input type="file" id="image" name="image" @input="form.image=$event.target.files[0]"

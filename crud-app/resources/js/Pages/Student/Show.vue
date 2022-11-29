@@ -6,7 +6,7 @@ import {Inertia} from '@inertiajs/inertia';
 
 const props =defineProps({
     student:Object,
-   
+    image:String
 })
 
 
@@ -39,7 +39,7 @@ const props =defineProps({
                                         <tr>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Image</td>
                                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                <img :src="student.image" class="h-20 w-20 rounded-full"  alter=""/>
+                                                <img :src="image" class="h-20 w-20 rounded-full"  alter=""/>
                                             </td>
                                         </tr>
                                         <tr>

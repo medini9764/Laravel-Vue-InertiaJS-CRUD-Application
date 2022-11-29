@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
+use domain\Facades\StudentFacade;
+use Illuminate\Support\Facades\Facade;
 
 class StudentController extends Controller
 {
@@ -17,8 +19,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Student',[
-            'students' => Student::all() -> map(function($student){
+            $students['students'] = Student::all() -> map(function($student){
                 
                 return[
                     'id' => $student->id,
@@ -27,9 +28,9 @@ class StudentController extends Controller
                     'age' => $student->age,
                     'status' => $student->status
                 ];
-            })
-        ]);
-        
+            });
+            
+        return Inertia::render('Student',$students);
        
     }
 
@@ -51,14 +52,7 @@ class StudentController extends Controller
      */
     public function store()
     {
-       // $image='';
-        $image = Request::file('image')->store('student','public');
-        Student::create([
-                'name' => Request::input('name'),
-                'age' => Request::input('age'),
-                'image' => $image,
-                'status' => Request::input('status')
-        ]);
+        StudentFacade::store();
         return Redirect::route('student');
     }
 
@@ -99,17 +93,8 @@ class StudentController extends Controller
      */
     public function update( Student $student)
     {
-        $image = $student->image;
-        if(Request::file('image')){
-            Storage::delete('public/'.$student->image);
-            $image = Request::file('image')->store('student','public');
-        }
-        $student->update([
-            'name' => Request::input('name'),
-            'age' => Request::input('age'),
-            'image' => $image,
-            'status' => Request::input('status')
-        ]);
+        
+        StudentFacade::update($student);
         return Redirect::route('student');
     }
 
@@ -120,9 +105,9 @@ class StudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Student $student)
-    {
-        Storage::delete('public/'.$student->image);
-        $student->delete();
+    { 
+        StudentFacade::destroy($student);
         return Redirect::route('student');
     }
+    
 }

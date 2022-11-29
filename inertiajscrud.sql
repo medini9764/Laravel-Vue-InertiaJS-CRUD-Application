@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 03:37 PM
+-- Generation Time: Nov 29, 2022 at 06:13 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.0.23
 
@@ -113,8 +113,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `name`, `image`, `age`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Hiyumi xx', 'student/iXFWOlPXuJiIUfSGBMbEfLgcj7Ts8ALQtP5LyXfN.png', 18, 1, '2022-11-26 22:58:53', '2022-11-27 03:08:12'),
-(2, 'Sarasi', 'student/0bSzhI4K1oWn0ij6pOZCn1xVs8rBbKCA4sBpHrhi.png', 26, 0, '2022-11-26 23:01:30', '2022-11-27 01:52:05');
+(1, 'Hiyumi xx', 'student/iXFWOlPXuJiIUfSGBMbEfLgcj7Ts8ALQtP5LyXfN.png', 21, 1, '2022-11-26 22:58:53', '2022-11-29 03:43:54'),
+(4, 'Sarasi', 'student/Ps1IODHZpEEyCDHsvXjZDW7cjT6h0Lw02GIinBFR.png', 26, 1, '2022-11-29 09:54:24', '2022-11-29 09:54:24'),
+(5, 'Kaveesha', 'student/7FyUoLpNR7PCW3bBOkIOzflwnT5IKzpgWKI10AgQ.png', 19, 0, '2022-11-29 10:34:30', '2022-11-29 10:34:30'),
+(7, 'Nisansala', 'student/4I4DNapOi0nLRKbcLPpKZhgwuFwUKHx9oJqLaGew.jpg', 10, 1, '2022-11-29 10:40:49', '2022-11-29 10:41:31');
 
 -- --------------------------------------------------------
 
@@ -210,7 +212,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
